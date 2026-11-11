@@ -1,0 +1,164 @@
+:root {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: #17352a;
+  background: #f3f7f4;
+  font-synthesis: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #16834e; }
+.shell { max-width: 960px; margin: 0 auto; padding: 42px 22px; }
+header { display: flex; gap: 18px; align-items: center; margin-bottom: 28px; }
+.mark {
+  width: 62px; height: 62px; border-radius: 18px; background: #d9f3e4; color: #16834e;
+  display: grid; place-items: center; font-size: 36px;
+}
+.eyebrow { font-size: 11px; letter-spacing: 1.5px; color: #16834e; font-weight: 800; margin: 0 0 4px; }
+h1 { font-size: 34px; margin: 0; }
+h2 { margin: 0 0 8px; font-size: 20px; }
+.sub, p { color: #61756a; }
+.notice {
+  background: #e3f4e9; border: 1px solid #c8e8d4; border-radius: 14px;
+  padding: 15px 18px; display: flex; flex-direction: column; gap: 4px; margin-bottom: 18px;
+}
+.panel {
+  background: white; border: 1px solid #e2ebe5; border-radius: 16px;
+  padding: 22px; margin: 16px 0; box-shadow: 0 8px 24px #183c2810;
+}
+.form { display: grid; gap: 14px; max-width: 560px; }
+.form label { display: grid; gap: 6px; font-size: 13px; font-weight: 700; }
+.form input, .form select, .admin-tools select {
+  border: 1px solid #d5e1d9; border-radius: 9px; padding: 12px; font: inherit; background: white;
+}
+.inline { grid-template-columns: 1fr 1fr auto; align-items: end; max-width: none; gap: 12px; }
+button {
+  background: #16834e; color: white; border: 0; border-radius: 9px;
+  padding: 12px 18px; font-weight: 700; cursor: pointer;
+}
+button:hover { background: #106b3e; }
+button:disabled { opacity: 0.55; cursor: not-allowed; }
+.ghost { background: #edf5ef; color: #246341; }
+.ghost.danger { background: #fde8e5; color: #a63d31; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.item {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 16px; padding: 14px 0; border-bottom: 1px solid #edf1ee; flex-wrap: wrap;
+}
+.item:last-child { border: 0; }
+.item small { display: block; color: #718078; margin-top: 5px; }
+.err-text { color: #a63d31 !important; }
+.status {
+  font-size: 11px; font-weight: 800; padding: 7px 10px; border-radius: 30px; background: #edf1ee;
+  white-space: nowrap;
+}
+.approved { background: #ddf5e5; color: #167444; }
+.failed, .rejected { background: #fde8e5; color: #a63d31; }
+.processing { background: #fff1d7; color: #93620c; }
+.pending { background: #e8eefb; color: #405b99; }
+.feedback-banner {
+  border-radius: 12px; padding: 12px 16px; margin: 0 0 12px; font-weight: 600;
+}
+.feedback-banner.ok { background: #e3f4e9; color: #167444; }
+.feedback-banner.err { background: #fde8e5; color: #a63d31; }
+.tabs { display: flex; gap: 8px; margin-bottom: 18px; }
+.tab { background: #edf5ef; color: #246341; }
+.tab.active { background: #16834e; color: white; }
+.stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  margin: 16px 0; padding: 14px; background: #f7faf8; border-radius: 12px;
+}
+.stats .label { display: block; font-size: 12px; color: #718078; margin-bottom: 4px; }
+.admin-tools { display: flex; gap: 8px; align-items: center; }
+.admin-actions { display: flex; flex-direction: column; gap: 8px; align-items: stretch; min-width: 140px; }
+.admin-item { align-items: flex-start; }
+.override-box {
+  width: 100%; display: grid; gap: 10px; margin-top: 8px;
+  padding: 12px; background: #f7faf8; border-radius: 10px;
+}
+footer { text-align: center; color: #829087; font-size: 12px; margin-top: 40px; }
+
+/* Weekly Eco Challenge */
+.challenge-panel h3 { margin: 8px 0 6px; font-size: 15px; }
+.motivation-banner {
+  background: linear-gradient(120deg, #e3f4e9, #f3faf6);
+  border: 1px solid #c8e8d4;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 0 0 16px;
+  color: #167444;
+  font-weight: 700;
+}
+.challenge-stats .progress-track {
+  margin-top: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #e5eee8;
+  overflow: hidden;
+}
+.challenge-stats .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #16834e, #2ea86a);
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+.muted-block { display: block; margin-top: 6px; color: #718078; font-size: 12px; font-weight: 500; }
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+.day-card {
+  border: 1px solid #e2ebe5;
+  border-radius: 14px;
+  padding: 14px;
+  background: #fbfdfc;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 190px;
+}
+.day-card header { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.day-name { font-size: 12px; font-weight: 800; letter-spacing: 0.4px; color: #16834e; text-transform: uppercase; }
+.day-card p { margin: 0; font-size: 13px; color: #61756a; flex: 1; }
+.day-actions { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.day-card.status-completed { background: #f0faf4; border-color: #c8e8d4; }
+.day-card.status-submitted, .day-card.status-processing { background: #fffaf0; border-color: #f0dfb4; }
+.day-card.status-rejected, .day-card.status-failed { background: #fff6f5; border-color: #f0cfc9; }
+.badge-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.badge-chip {
+  background: #edf5ef;
+  border: 1px solid #d5e8dc;
+  border-radius: 12px;
+  padding: 12px 14px;
+  min-width: 160px;
+}
+.badge-chip strong { display: block; margin-bottom: 4px; }
+.badge-chip small { color: #718078; }
+
+.challenge-edit-form { max-width: none; }
+.task-edit-grid {
+  display: grid;
+  gap: 12px;
+  margin: 12px 0 8px;
+}
+.task-edit-row {
+  display: grid;
+  grid-template-columns: 90px 1.2fr 1.4fr 90px;
+  gap: 10px;
+  padding: 12px;
+  background: #f7faf8;
+  border-radius: 12px;
+  border: 1px solid #e2ebe5;
+  align-items: end;
+}
+.task-edit-row label { display: grid; gap: 6px; font-size: 12px; font-weight: 700; }
+.task-edit-row input { border: 1px solid #d5e1d9; border-radius: 9px; padding: 10px; font: inherit; background: white; }
+.edit-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+
+@media (max-width: 650px) {
+  .inline, .stats { grid-template-columns: 1fr; }
+  .top { align-items: flex-start; flex-direction: column; }
+  .week-grid { grid-template-columns: 1fr; }
+  .task-edit-row { grid-template-columns: 1fr; }
+}

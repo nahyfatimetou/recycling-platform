@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: recycling-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: recycling_db
+      POSTGRES_USER: recycling_user
+      POSTGRES_PASSWORD: change_me_local_only
+    ports:
+      # Host 5433 avoids conflict with other local Postgres (e.g. container heyen on 5432)
+      - "5433:5432"
+    volumes:
+      - recycling_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U recycling_user -d recycling_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  recycling_pgdata:
